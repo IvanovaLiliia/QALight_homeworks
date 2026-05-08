@@ -40,8 +40,6 @@ public class ChangeCityTest {
             Assertions.assertTrue(TitleText.contains(city), ErrorMessage);
 
 
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         } finally {
             driver.quit();
         }
