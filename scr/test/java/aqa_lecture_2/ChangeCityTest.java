@@ -10,7 +10,7 @@ import static java.lang.String.format;
 import static java.lang.Thread.sleep;
 
 public class ChangeCityTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String city = "Одеса";
         WebDriver driver = new ChromeDriver();
 

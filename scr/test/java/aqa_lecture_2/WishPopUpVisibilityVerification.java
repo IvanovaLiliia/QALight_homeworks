@@ -11,7 +11,7 @@ import static java.lang.Thread.sleep;
 
 public class WishPopUpVisibilityVerification {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
 
         try {
@@ -29,8 +29,6 @@ public class WishPopUpVisibilityVerification {
 
             Assertions.assertTrue(wishListPopUp.isDisplayed(), "WishList PopUp isn`t displayed");
 
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         } finally {
             driver.quit();
         }

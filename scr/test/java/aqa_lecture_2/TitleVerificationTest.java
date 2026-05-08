@@ -13,7 +13,7 @@ import static java.lang.Thread.sleep;
 
 public class TitleVerificationTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String searchWord = "IPad";
         WebDriver driver = new ChromeDriver();
 
@@ -37,8 +37,6 @@ public class TitleVerificationTest {
             String ErrorMessage = format("Title page is incorrect. It doesn`t contains <%S> search word", searchWord);
             Assertions.assertTrue(TitleText.contains(searchWord), ErrorMessage);
 
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         } finally {
             driver.quit();
         }
