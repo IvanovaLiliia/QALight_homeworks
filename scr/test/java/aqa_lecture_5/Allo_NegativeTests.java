@@ -21,7 +21,7 @@ public class Allo_NegativeTests extends BaseTest {
 
         WebDriverWait wait = new WebDriverWait(
                 getDriver(),
-                Duration.ofSeconds(10)
+                Duration.ofSeconds(20)
         );
 
         WebElement authButton = wait.until(

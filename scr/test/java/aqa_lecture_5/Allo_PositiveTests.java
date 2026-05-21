@@ -15,28 +15,30 @@ public class Allo_PositiveTests extends BaseTest{
     @Test
     public void AddtoCompareList() {
 
+        String InputWord = "Велосипеди";
         String ExpectedTitle = "Додано товарів: 2";
         String ExpectedTitleTwo = "Всі характеристики";
         String ExpectedTitleThree = "Відмінності";
 
         WebDriverWait wait = new WebDriverWait(
                 getDriver(),
-                Duration.ofSeconds(10)
+                Duration.ofSeconds(20)
         );
 
-        WebElement authButton = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        By.xpath("//div[@class='ct-button']")
-                )
-        );
-        authButton.click();
 
-        WebElement BikeOptions = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        By.xpath("//a[contains(text(),'Велосипеди')]")
+        WebElement inputField = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.xpath("//input[@id='search-form__input']")
                 )
         );
-        BikeOptions.click();
+        inputField.sendKeys(InputWord);
+
+        WebElement SearchButton = wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        By.xpath("//span[contains(@class,'search-form__submit-button-text') and normalize-space()='Знайти']")
+                )
+        );
+        SearchButton.click();
 
         WebElement SortButton = wait.until(
                 ExpectedConditions.elementToBeClickable(
@@ -97,12 +99,12 @@ public class Allo_PositiveTests extends BaseTest{
 
         WebDriverWait wait = new WebDriverWait(
                 getDriver(),
-                Duration.ofSeconds(10)
+                Duration.ofSeconds(40)
         );
 
         WebElement ShopButton = wait.until(
                 ExpectedConditions.elementToBeClickable(
-                        By.xpath("//a[contains(text(),'Магазини')]")
+                        By.xpath("//span[contains(@class,'mh-button__title') and normalize-space()='Магазини']")
                 )
         );
         ShopButton.click();
