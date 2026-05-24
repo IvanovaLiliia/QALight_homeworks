@@ -12,7 +12,7 @@ import java.time.Duration;
 
 import static java.lang.String.format;
 
-public class Allo_NegativeTests extends BaseTest {
+public class AlloNegativeTests extends BaseTest {
 
     @Test
     public void authNegativeTest() {

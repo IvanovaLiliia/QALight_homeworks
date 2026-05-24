@@ -7,7 +7,7 @@
     <test name="Class Tests">
 
         <classes>
-            <class name="aqa_lecture_5.Allo_NegativeTests"/>
+            <class name="aqa_lecture_5.AlloNegativeTests"/>
         </classes>
 
     </test>

@@ -11,8 +11,7 @@ import java.time.Duration;
 
 import static java.lang.String.format;
 
-public class Allo_DataProviderTest extends BaseTest {
-
+public class DataProviderTest extends BaseTest {
     @Test(dataProvider = "searchProducts",
             dataProviderClass = SearchData.class)
     public void searchProductTest(String productName, String ExpectedTitle) {

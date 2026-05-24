@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Allo_PositiveTests extends BaseTest{
+public class PositiveTests extends BaseTest{
 
     @Test
     public void AddtoCompareList() {
