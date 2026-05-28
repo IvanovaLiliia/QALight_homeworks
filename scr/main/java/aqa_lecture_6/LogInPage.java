@@ -19,10 +19,22 @@ public class LogInPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void enterPassword(String password) {
-        WebElement searchField = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Пароль']"))
+    public void EnterEmail(String password) {
+        WebElement searchField = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.xpath("//input[@type='text' and contains(@class,'field')]")
+                )
         );
+
         searchField.sendKeys(password, Keys.ENTER);
-    };
+
+    }
+
+    public void clickOnForgetPassword() {
+        WebElement RemindButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[@href='/ua/reminder/']"))
+        );
+        RemindButton.click();
+    }
+
 }
