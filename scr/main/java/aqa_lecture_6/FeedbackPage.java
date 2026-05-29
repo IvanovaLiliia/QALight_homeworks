@@ -33,13 +33,27 @@ public class FeedbackPage {
         nameInput.sendKeys(searchWord, Keys.ENTER);
     };
 
-    public void enterMail (String searchWord) {
+    public void enterShopName (String searchWord) {
         WebElement mailInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@id='name']"))
+                By.xpath("//input[@placeholder='Введіть назву магазину']"))
         );
         mailInput.sendKeys(searchWord, Keys.ENTER);
     };
 
+
+    public void clickOnSendFeedback() {
+        WebElement FeedbackButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Відправити']"))
+        );
+        FeedbackButton.click();
+    };
+
+    public String getErrorMessage() {
+        WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//p[normalize-space()='Поле «Тема» не може бути порожнім.']"))
+        );
+        return titleElement.getText();
+    }
 
 
 }
