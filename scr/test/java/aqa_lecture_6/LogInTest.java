@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class LogInTest extends BaseTest {
 
     @Test
-    public void LogInNegative() {
+    public void LogInExampleTest() {
 
         String email = "admin@test.com";
         String RemindText = "Зміна паролю";

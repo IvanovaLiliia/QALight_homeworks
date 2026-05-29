@@ -30,5 +30,12 @@ public class HomePage {
                 By.xpath("//div[@class='user-button__image flex middle-xs center-xs']"))
         );
         LogIn.click();
-    }
+    };
+
+    public void clickOnFeedbackPage() {
+        WebElement OnlineShop = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[normalize-space()='Для інтернет-магазинів']"))
+        );
+        OnlineShop.click();
+}
 }
