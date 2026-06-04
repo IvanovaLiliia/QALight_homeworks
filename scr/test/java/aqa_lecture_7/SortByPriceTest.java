@@ -13,9 +13,9 @@ public class SortByPriceTest extends BaseTest {
 
     String searchWord = "2E S180 2024 DualSim Black";
     @Test
-    @Story("Sort by price ascending")
+    @Story("Sort by price")
     @Severity(SeverityLevel.CRITICAL)
-    @Description("Проверка сортировки товаров по цене (от дешевых к дорогим)")
+    @Description("CheckProductSorting")
     public void sortByPriceTest() {
 
         HomePage homePage = new HomePage(getDriver());

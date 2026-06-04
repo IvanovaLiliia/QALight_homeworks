@@ -19,8 +19,6 @@ public class HomePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    // ---------------- SEARCH ----------------
-
     private final By searchInput =
             By.xpath("//input[contains(@placeholder,'Знайти товар')]");
 
@@ -38,13 +36,17 @@ public class HomePage {
         return new SearchResultPage(driver);
     }
 
-    // ---------------- CATALOG ----------------
-
     private final By catalogButton =
             By.xpath("//div[contains(@class,'button-menu-main') and contains(.,'Каталог')]");
 
     private final By smartphonesCategory =
             By.xpath("//a[contains(@href,'smartfony') or contains(text(),'Смартф')]");
+
+    private final By FeedbackPage =
+            By.xpath("//a[@data-tracking-id='global-1']");
+
+    private final By FAQPage =
+            By.xpath("//a[@href='/ua/help/']");
 
     @Step("Open catalog")
     public HomePage openCatalog() {
@@ -56,5 +58,17 @@ public class HomePage {
     public CategoryPage openSmartphonesCategory() {
         wait.until(ExpectedConditions.elementToBeClickable(smartphonesCategory)).click();
         return new CategoryPage(driver);
+    }
+
+    @Step("Open feedback page")
+    public HomePage openFeedbackPage() {
+        wait.until(ExpectedConditions.elementToBeClickable(FeedbackPage)).click();
+        return this;
+    }
+
+    @Step("Open FAQ page")
+    public HomePage openFAQPage() {
+        wait.until(ExpectedConditions.elementToBeClickable(FAQPage)).click();
+        return this;
     }
 }
