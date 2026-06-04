@@ -11,6 +11,7 @@ import aqa_lecture_7.CategoryPage;
 @Feature("Sorting products")
 public class SortByPriceTest extends BaseTest {
 
+    String searchWord = "422 – 489";
     @Test
     @Story("Sort by price ascending")
     @Severity(SeverityLevel.CRITICAL)
@@ -24,14 +25,16 @@ public class SortByPriceTest extends BaseTest {
                 .openSmartphonesCategory();
 
         categoryPage.clickOnPhoneCategory();
-        categoryPage
-                .openSortMenu()
-                .sortByPriceAsc();
-
-        String afterSort = categoryPage.getFirstProductPrice();
+        categoryPage.openSortMenu();
+        categoryPage.sortByPriceAsc();
 
 
-        Assert.assertNotEquals(afterSort,
-                "Sorting didn't change first product price");
+        String actualResultValue = categoryPage.getFirstProductPrice();
+
+        System.out.println("Title on product page: " + actualResultValue);
+        Assert.assertTrue(actualResultValue.contains(searchWord),
+                "Product title does not contain the search word!");
+
+
     }
 }

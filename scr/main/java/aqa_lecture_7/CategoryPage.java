@@ -33,6 +33,8 @@ public class CategoryPage {
 
 
 
+
+
     @Step("ClickOnPhoneCategory")
     public CategoryPage clickOnPhoneCategory() {
         wait.until(ExpectedConditions.elementToBeClickable(categoryPhone)).click();
