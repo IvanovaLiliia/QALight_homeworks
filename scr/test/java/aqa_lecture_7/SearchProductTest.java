@@ -20,8 +20,7 @@ public class SearchProductTest extends BaseTest {
 
         HomePage homePage = new HomePage(getDriver());
 
-        SearchResultPage resultPage =
-                homePage.searchProduct("iPhone 15");
+        SearchResultPage resultPage = homePage.searchProduct("iPhone 15");
 
         Assert.assertTrue(
                 resultPage.getProductsCount() > 0,
