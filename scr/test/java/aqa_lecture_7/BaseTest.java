@@ -16,7 +16,7 @@ public class BaseTest {
         @BeforeMethod
         public void driverInit() {
             driver = new ChromeDriver();
-            driver.get("https://rozetka.com.ua/");
+            driver.get("https://hotline.ua/");
             driver.manage().window().maximize();
         }
 
