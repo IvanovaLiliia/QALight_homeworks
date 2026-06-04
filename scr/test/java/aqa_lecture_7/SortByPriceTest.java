@@ -11,7 +11,7 @@ import aqa_lecture_7.CategoryPage;
 @Feature("Sorting products")
 public class SortByPriceTest extends BaseTest {
 
-    String searchWord = "422 – 489";
+    String searchWord = "2E S180 2024 DualSim Black";
     @Test
     @Story("Sort by price ascending")
     @Severity(SeverityLevel.CRITICAL)
@@ -27,7 +27,6 @@ public class SortByPriceTest extends BaseTest {
         categoryPage.clickOnPhoneCategory();
         categoryPage.openSortMenu();
         categoryPage.sortByPriceAsc();
-
 
         String actualResultValue = categoryPage.getFirstProductPrice();
 

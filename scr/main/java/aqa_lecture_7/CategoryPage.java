@@ -29,7 +29,7 @@ public class CategoryPage {
             By.xpath("//div[contains(text(),'зростанням ціни')]");
 
     private final By firstProductPrice =
-            By.xpath("//div[contains(@class,'list-item__value-price')]");
+            By.xpath("(//a[contains(@class,'item-title') and contains(.,'2E S180 2024 DualSim Black')])[2]");
 
 
 
