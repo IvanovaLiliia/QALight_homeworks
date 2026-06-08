@@ -11,14 +11,30 @@ public class LogInPage {
 
     private WebDriver driver;
     private WebDriverWait waiter;
+
     public LogInPage(WebDriver driver) {
         this.driver = driver;
-        waiter = new WebDriverWait(this.driver, Duration.ofSeconds(5));
+        this.waiter = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    public void login () {
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Створити акаунт']")));
-        driver.findElement(By.xpath("//input[@id='user_id']")).sendKeys(email);
+    public void login(String login, String password) {
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='user_id']")));
+
+        driver.findElement(By.xpath("//input[@id='user_id']")).sendKeys(login);
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
+
+        driver.findElement(By.xpath("//button[@id='submit']")).click();
+    }
+
+    public String getMessage() {
+
+        By toastLocator = By.xpath("//span[@class='user-business']");
+        return waiter.until(ExpectedConditions.visibilityOfElementLocated(toastLocator)).getText();
+    }
+
+    public String getErrorMessage() {
+
+        By toastLocator = By.xpath("//div[@id='toast-container']//div[contains(@class,'toast-message')]");
+        return waiter.until(ExpectedConditions.visibilityOfElementLocated(toastLocator)).getText();
     }
 }
